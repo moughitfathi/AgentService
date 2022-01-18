@@ -1,5 +1,6 @@
 package com.java.models;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 
 import javax.persistence.Entity;
@@ -22,6 +23,7 @@ import lombok.ToString;
 public class Agent extends Personne {
 
 
+	private double soldeAgent;
 	@ManyToOne
 	@JoinColumn(name="ID_AGENCE") 
 	private Pointdevente pointdevente;
