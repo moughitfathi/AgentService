@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import com.java.models.Agent;
 import com.java.models.Beneficiaire;
@@ -23,6 +24,7 @@ import com.java.repositories.PersonneRepository;
 import com.java.repositories.PointdeventeRepository;
 
 @SpringBootApplication
+@EnableDiscoveryClient
 public class AgentServiceApplication implements CommandLineRunner {
 	@Autowired private PersonneRepository personnerepository;
 	@Autowired private CompteRepository compteRepository;
