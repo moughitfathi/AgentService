@@ -22,7 +22,6 @@ public class Beneficiaire {
 	private Long id;
 	private String nom;
 	private String prenom ;
-	private String password;
 	@ManyToOne
 	@JoinColumn(name="id_client") private Client client ;
 	 

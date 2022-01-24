@@ -46,7 +46,6 @@ public class AgentServiceImpl implements AgentService {
 	@Override
 	public void servirTransfertEspece(Transfer transfert, Long id) {
 		Agent agent=agentRepository.findAgentById(id);
-	
 		Transfer tr=transfertService.transferEspeceAgent(transfert, agent.getSoldeAgent());
 		
 	}

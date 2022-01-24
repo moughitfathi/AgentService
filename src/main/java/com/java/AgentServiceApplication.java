@@ -47,7 +47,7 @@ public class AgentServiceApplication implements CommandLineRunner {
 		Personne p1= new Personne(null, "Mr", "moughit", "fathi", "ingenieur",new Date(), "Marocaine",   "sakala","0629088113","abdelmoughit.fathi@gmail.com","password","N413923", "carte","agent");
 		Personne p2= new Personne(null, "Mr","mt" ,"fi","ingenieur",new Date(),"Marocaine","sa","06489488164","abd.fathi@gmail.com","passwordd","N483927","carte","client");
 		Compte c1=new Compte(null,1,new BigDecimal(35421),null,pdv);
-		Beneficiaire b1=new Beneficiaire(null, "ben1", "benben", "password1", null);
+		Beneficiaire b1=new Beneficiaire(null, "ben1", "benben", null);
 
 		List<Compte> lc = new ArrayList<Compte>(); 
 		List<Beneficiaire> lb = new ArrayList<Beneficiaire>(); 
