@@ -13,11 +13,11 @@ public interface AgentService {
 	 
 	 public List<Transfer> TransfertsByStatus(Status status);
 	 
-	 public void servirTransfertEspece(Transfer transfert);
-	 public void servirTransfertEspeceMult(List<Transfer> transfert);
+	 public void servirTransfertEspece(Transfer transfert,Long id);
+	 public void servirTransfertEspeceMult(List<Transfer> transfert, Long id);
 	 
-	 public void servirTransfertDebit(Transfer transfert);
-	 public void servirTransfertMultDebit(List<Transfer> transfert);
+	 public void servirTransfertDebit(Transfer transfert,Long id);
+	 public void servirTransfertMultDebit(List<Transfer> transfert,Long id);
 
 
 

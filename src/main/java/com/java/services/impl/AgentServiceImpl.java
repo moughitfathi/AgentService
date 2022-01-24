@@ -13,6 +13,7 @@ import com.java.enums.Status;
 import com.java.models.Agent;
 import com.java.models.Emission;
 import com.java.models.Transfer;
+import com.java.repositories.AgentRepository;
 import com.java.services.AgentService;
 import com.java.services.EmissionService;
 import com.java.services.TransfertService;
@@ -25,7 +26,8 @@ public class AgentServiceImpl implements AgentService {
 	private EmissionService emissionService;
 	@Autowired
 	private AgentService agentService;
-	
+	@Autowired
+	private AgentRepository agentRepository;
 	@Autowired
 	private TransfertService transfertService;
 
@@ -42,28 +44,28 @@ public class AgentServiceImpl implements AgentService {
 	}
 
 	@Override
-	public void servirTransfertEspece(Transfer transfert) {
-		Agent agent=agentService.getByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+	public void servirTransfertEspece(Transfer transfert, Long id) {
+		Agent agent=agentRepository.findAgentById(id);
 	
 		Transfer tr=transfertService.transferEspeceAgent(transfert, agent.getSoldeAgent());
 		
 	}
 
 	@Override
-	public void servirTransfertEspeceMult(List<Transfer> listetransferts) {
-		Agent agent=agentService.getByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+	public void servirTransfertEspeceMult(List<Transfer> listetransferts, Long id) {
+		Agent agent=agentRepository.findAgentById(id);
 		List<Transfer> listetr=transfertService.transferEspeceAgentMult(listetransferts, agent.getSoldeAgent());		
 	}
 
 	@Override
-	public void servirTransfertDebit(Transfer transfert) {
-		Agent agent=agentService.getByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+	public void servirTransfertDebit(Transfer transfert, Long id) {
+		Agent agent=agentRepository.findAgentById(id);
 		Transfer tr=transfertService.transferDebAgent(transfert, agent.getSoldeAgent());
 	}
 
 	@Override
-	public void servirTransfertEspeceMultDebit(List<Transfer> listetransferts) {
-		Agent agent=agentService.getByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+	public void servirTransfertMultDebit(List<Transfer> listetransferts, Long id) {
+		Agent agent=agentRepository.findAgentById(id);
 		List<Transfer> listetr=transfertService.transferDebitAgentMult(listetransferts, agent.getSoldeAgent()) ;
 		}
 	

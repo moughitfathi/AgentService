@@ -8,4 +8,6 @@ import com.java.models.Agent;
 @RepositoryRestResource
 public interface AgentRepository extends JpaRepository<Agent, Long>{
 
+    public Agent findAgentById(Long id);
+
 }

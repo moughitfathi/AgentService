@@ -1,4 +1,4 @@
-package com.ensa.controllers;
+package com.java.controllers;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

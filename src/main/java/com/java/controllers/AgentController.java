@@ -1,4 +1,4 @@
-package com.ensa.controllers;
+package com.java.controllers;
 
 import java.util.List;
 
@@ -38,39 +38,39 @@ public class AgentController {
 		return listesTransfertsByStatus;
 	}
 	
-	@PostMapping("/servirTransfertEspece")
+	@PostMapping("/servirTransfertEspece/{id}")
 	   @ResponseStatus(HttpStatus.CREATED)
-	    public void servirTransferEspece(@RequestBody Transfer transfert){
+	    public void servirTransferEspece(@RequestBody Transfer transfert, @PathVariable Long id){
          
-		agentService.servirTransfertEspece(transfert);
+		agentService.servirTransfertEspece(transfert,id);
 
 	
 	}
 	
-	@PostMapping("/servirTransfertEspeceMult")
+	@PostMapping("/servirTransfertEspeceMult/{id}")
 	   @ResponseStatus(HttpStatus.CREATED)
-	    public void servirTransferEspeceMult(@RequestBody List<Transfer> listetransferts){
+	    public void servirTransferEspeceMult(@RequestBody List<Transfer> listetransferts, @PathVariable Long id){
       
-		agentService.servirTransfertEspeceMult(listetransferts);
+		agentService.servirTransfertEspeceMult(listetransferts, id);
 
 	
 	}
 	
 	
-	@PostMapping("/servirTransfertDebitMult")
+	@PostMapping("/servirTransfertDebitMult/{id}")
 	   @ResponseStatus(HttpStatus.CREATED)
-	    public void servirTransferDebit(@RequestBody Transfer transfer){
+	    public void servirTransferDebit(@RequestBody Transfer transfer, @PathVariable Long id){
    
-		agentService.servirTransfertDebit(transfer);
+		agentService.servirTransfertDebit(transfer,id);
 
 	
 	}
 	
-	@PostMapping("/servirTransfertDebitMult")
+	@PostMapping("/servirTransfertDebitMult/{id}")
 	   @ResponseStatus(HttpStatus.CREATED)
-	    public void servirTransferDebitMult(@RequestBody List<Transfer> listetransferts){
+	    public void servirTransferDebitMult(@RequestBody List<Transfer> listetransferts, @PathVariable Long id){
    
-		agentService.servirTransfertMultDebit(listetransferts);
+		agentService.servirTransfertMultDebit(listetransferts,id);
 
 	
 	}
