@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.java.enums.Status;
 import com.java.models.Transfer;
 
 @FeignClient(name = "transfer-service" , url = "http://localhsot:8083/")
@@ -41,5 +42,9 @@ public interface TransfertService {
     public List<Transfer> findTransferByexprDate(LocalDateTime exprDate);
 
     public List<Transfer> findByMotifBlocage(String motifBlocage);
+    
+    public List<Transfer> findByStatus(Status status);
+
+    public Transfer save(Transfer transfer);
 
 }
